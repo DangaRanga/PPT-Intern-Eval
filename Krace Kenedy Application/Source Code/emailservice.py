@@ -42,6 +42,7 @@ def sunny_alert(server,forecast,sheet_name,senderemail,password,location):
 # -----------------------------------------------------------------------------#
 # Function to send an email alert when it is expected for there to be rain
 # -----------------------------------------------------------------------------#
+
 def rain_schedule_change(server,forecast,sheet_name,senderemail,password,location):
     mailing_list = mailing_list_loc(sheet_name,location)
     if not is_clear(forecast):
@@ -56,11 +57,11 @@ def rain_schedule_change(server,forecast,sheet_name,senderemail,password,locatio
 # Function to alert the IT workers if ther will be rain
 # -----------------------------------------------------------------------------#
 def weather_alert_IT(server,forecast,sheet_name,senderemail,password):
-    email_dict = role_email_dict(sheet_name) #This makes a dictionary with the IT roles
+    email_dict = role_email_dict(sheet_name)  # This makes a dictionary with the IT roles
     mailing_list = []
     for email in email_dict.values():
         mailing_list.append(email)
-    if "shower rain" or "rain" or "light rain"  or "thunderstorm " in forecast:
+    if "shower rain" or "rain" or "light rain" or "thunderstorm " in forecast:
         server.login(senderemail,password)
         subject = "Rainy Day Alert"
         message = "It's expected for there to be some rain, its best not to hit the streets this week"

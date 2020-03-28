@@ -109,14 +109,14 @@ def main():
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     os.system("cls")
     print("# -----------Krace Gennedy Weather Forecast and Email Service login-------- #\n")
+    email_address = input("Enter your email address: ")
     while True:
-        email_address = input("Enter your email address: ")
         if is_empty(email_address):
-            print("Please enter a valid email address")
+            email_address = input("Please enter a valid email address: ")
             continue
         else:
             break
-    email_address = input("Enter your email address: ")
+   
     password = input("Enter your email address password: ")
     #DB_sheet = None
     os.system("cls")
@@ -161,5 +161,4 @@ def main():
 
 
 
-if __name__ == '__main__':
-    main()
+main()

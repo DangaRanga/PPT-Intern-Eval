@@ -1,1 +1,1 @@
-
+ pandas, xslxwriter, openpyxl, smtplib pyowm

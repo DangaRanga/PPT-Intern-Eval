@@ -8,10 +8,11 @@ import smtplib
 from email.mime.text import MIMEText
 import pyowm
 
-#------------------------------------------------------------------------------#
+# ------------------------------------------------------------------------------#
 # Function to make the excel workbook as an excel macro, since openpyxl
 # corrupts xlsx files
-#-------------------------------------------------------------------------------#
+# -------------------------------------------------------------------------------#
+
 def make_xlsm_wb():
     file = openpyxl.load_workbook('WorkerDB.xlsx',read_only=False,keep_vba=True)
     file.save('WorkerDB.xlsm')
@@ -37,7 +38,6 @@ def make_database():
 # ---------------------------------------------------------------------------- #
 
 def add_name(sheet_name):
-    Terminate = False
     na_row = 2
     na_col = 2
     while True:
@@ -158,7 +158,6 @@ def add_role(sheet_name):
 # -----------------------------------------------------------------------------#
 
 def add_email(sheet_name):
-    Terminate = False
     em_row = 2
     em_col = 8
     while True:

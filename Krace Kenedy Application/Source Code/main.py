@@ -105,7 +105,8 @@ def email_choice(api_key,server,email_address,password,sheet_name):
 
 def main():
     #The api_key for getting weather data
-    api_key = pyowm.OWM("4e3f3c16fa43516e2009e8a7ec24ac5c")
+    key = input("Enter your Open Weather API key")
+    api_key = pyowm.OWM(key)
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     os.system("cls")
     print("# -----------Krace Gennedy Weather Forecast and Email Service login-------- #\n")
